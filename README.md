@@ -4,7 +4,7 @@ PsyOPS (short for **Psy**chiatric **O**mnilocus **P**rioritization **S**core)
 is a software package for prioritizing causal genes from psychiatric genome-wide 
 association studies (GWAS). 
 
-For a detailed description of PsyOPS, check out [our paper](TODO)!
+For a detailed description of PsyOPS, check out [our paper](https://www.nature.com/articles/s41380-022-01542-6)!
 
 ## Getting started
 

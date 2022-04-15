@@ -112,7 +112,7 @@ alias_to_gene = pd.read_table(gene_alias_file, header=None)\
     .map(set)
 alias_to_gene = pd.Series({gene: aliases.difference({gene})
                            for aliases in alias_to_gene.values
-                           for gene in aliases}).explode()
+                           for gene in aliases}).map(tuple).explode()
 alias_to_gene = alias_to_gene[alias_to_gene.isin(genes.gene)]
 alias_to_gene['DKFZP761J1410'] = 'PRG4'  # pLI
 alias_to_gene['RP11-1055B8.7'] = 'BAHCC1'  # pLI

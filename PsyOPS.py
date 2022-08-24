@@ -52,7 +52,10 @@ parser = ArgumentParser()
 parser.add_argument('--GWAS-hit-file', required=True)
 parser.add_argument('--output-file', required=True)
 args = parser.parse_args()
-GWAS_hits = pd.read_table(args.GWAS_hit_file, index_col='rs')\
+GWAS_hits = pd.read_table(args.GWAS_hit_file, index_col='rs', 
+                          dtype={'chrom': str})\
+    .assign(chrom=lambda df: df.chrom.where(df.chrom.str.startswith('chr'),
+                                            'chr' + df.chrom))\
     .query('chrom != "chrX" and chrom != "chrY" and chrom != "chrM"')\
     .assign(chrom_int=lambda df: df.chrom.str[3:].astype(int))\
     .sort_values(['chrom_int', 'bp_hg19'])\

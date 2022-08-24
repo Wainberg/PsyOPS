@@ -34,8 +34,9 @@ PsyOPS.py takes two arguments, both of which are mandatory:
 
 1) `--GWAS-hit-file`: a tab-separated file of lead variants. Must contain 3 
    columns: "rs" (the variant's rs number), "chrom" (the variant's chromosome; 
-   only autosomal variants will be analyzed), and "bp_hg19" (the variant's hg19/
-   GRCh37 base pair coordinates). 
+   only autosomal variants will be analyzed), and "bp_hg19" (the variant's 
+   hg19/GRCh37 base pair coordinates). Chromosomes can be specified either with
+   or without the "chr" prefix (e.g. both "1" and "chr1" are fine).
 2) `--output-file`: a tab-separated file where results will be output. 
    Each row lists a gene within 500 kilobases of one of the lead variants. 
    Columns denote the lead variant, the distance to the gene, the gene, the 
